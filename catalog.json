@@ -1,0 +1,44 @@
+[
+{
+    "model": "catalog.product",
+    "pk": 7,
+    "fields": {
+        "name": "Самсунг",
+        "description": "Совеременный смартфон со всеми необходимыми функциями",
+        "image": "",
+        "category": 4,
+        "price": 900,
+        "created_at": "2024-10-06",
+        "updated_at": "2024-10-06"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 9,
+    "fields": {
+        "name": "Бирюса",
+        "description": "Небольшой холодильник для маленьких помещений",
+        "image": "",
+        "category": 5,
+        "price": 500,
+        "created_at": "2024-10-06",
+        "updated_at": "2024-10-06"
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 4,
+    "fields": {
+        "name": "Смартфоны",
+        "description": "Мобильные устройства для связи"
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 5,
+    "fields": {
+        "name": "Холодильники",
+        "description": "Устройства для хранения скоропортящихся продуктов питания"
+    }
+}
+]
