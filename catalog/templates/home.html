@@ -10,10 +10,7 @@
           <div class="card-body">
             <ul class="list-unstyled mt-3 mb-4">
               <li>Товар в категории: {{ product.name }}</li>
-              <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Описание:</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" maxlength="100">{{ product.description }}</textarea>
-              </div>
+              <li>Описание: {{ product.description | truncatechars:100 }}</li>
             </ul>
             <a class="btn btn-primary" href="{% url 'catalog:product_detail' product.pk %}" role="button">Посмотреть</a>
           </div>
