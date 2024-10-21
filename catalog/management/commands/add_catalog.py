@@ -9,5 +9,8 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         Product.objects.all().delete()
         Category.objects.all().delete()
-        call_command('loaddata', 'catalog.json')
-        self.stdout.write(self.style.SUCCESS('Successfully loaded data from fixture'))
+        call_command("loaddata", "catalog.json")
+        self.stdout.write(self.style.SUCCESS(
+            "Successfully loaded data from fixture"
+            )
+        )

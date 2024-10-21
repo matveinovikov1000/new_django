@@ -3,6 +3,7 @@ from django.db import models
 
 class BlogPost(models.Model):
     """Модель записи в блог"""
+
     title = models.CharField(
         max_length=150,
         verbose_name="Заголовок",
@@ -29,7 +30,13 @@ class BlogPost(models.Model):
     class Meta:
         verbose_name = "Пост в блоге"
         verbose_name_plural = "Посты в блоге"
-        ordering = ["title", "content", "created_at", "publication_sign", "views_counter"]
+        ordering = [
+            "title",
+            "content",
+            "created_at",
+            "publication_sign",
+            "views_counter",
+        ]
 
     def __str__(self):
         return self.title
