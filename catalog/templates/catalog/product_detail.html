@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'catalog/base.html' %}
 {% block content %}
     <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
       <div class="col">
@@ -7,11 +7,11 @@
             <img src="{{ product.image.url }}">
           </div>
           <div class="card-body">
-            <h1 class="card-title pricing-card-title">{{ product.price }}$</h1>
+            <h1 class="card-title pricing-card-title">{{ object.price }}$</h1>
             <ul class="list-unstyled mt-3 mb-4">
-              <li>Товар в категории: {{ product.category }}</li>
-              <li>Товар в категории: {{ product.name }}</li>
-              <li>Описание: {{ product.description }}</li>
+              <li>Товар в категории: {{ object.category }}</li>
+              <li>Товар в категории: {{ object.name }}</li>
+              <li>Описание: {{ object.description }}</li>
             </ul>
             <a class="btn btn-primary" href="{% url 'catalog:home' %}" role="button">Назад</a>
           </div>

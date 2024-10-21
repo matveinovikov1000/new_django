@@ -3,6 +3,7 @@ from django.db import models
 
 class Product(models.Model):
     """Модель, описывающая товар"""
+
     name = models.CharField(
         max_length=150,
         verbose_name="Наименование продукта",
@@ -44,13 +45,15 @@ class Product(models.Model):
 
 class Category(models.Model):
     """Модель, описывающая категорию товара"""
+
     name = models.CharField(
         max_length=150,
         verbose_name="Наименование категории",
         help_text="Введите наименование категории",
     )
     description = models.TextField(
-        verbose_name="Описание категории", help_text="Введите описание категории"
+        verbose_name="Описание категории",
+        help_text="Введите описание категории"
     )
 
     class Meta:
