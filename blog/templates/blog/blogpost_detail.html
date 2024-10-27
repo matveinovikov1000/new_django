@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+{% load my_tags %}
+{% block content %}
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+          <div class="card-header">
+            <img src="{{ blogpost.preview | media_filter }}">
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Заголовок поста: {{ object.title }}</li>
+              <li>Содержание: {{ object.content }}</li>
+            </ul>
+            <a class="btn btn-primary" href="{% url 'blog:posts' %}" role="button">Назад</a>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}
