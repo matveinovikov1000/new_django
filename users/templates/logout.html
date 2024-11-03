@@ -1,0 +1,18 @@
+{% extends 'catalog/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form class="row" method="get" enctype="multipart/form-data">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Вы вышли из системы</h2>
+                        <p>Спасибо, что воспользовались нашим магазином. Вы успешно вышли из системы.</p>
+                    </div>
+                        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="{% url 'users:login' %}">Войти снова</a>
+                </div>
+            </form>>
+        </div>
+    </div>
+</div>
+{% endblock %}
