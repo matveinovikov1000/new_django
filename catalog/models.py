@@ -33,6 +33,11 @@ class Product(models.Model):
     )
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
+    is_published = models.BooleanField(
+        default=False,
+        verbose_name="Признак публикации",
+        help_text="Опубликовать",
+    )
 
     class Meta:
         verbose_name = "Продукт"

@@ -5,7 +5,7 @@
       <div class="col">
         <div class="card mb-4 rounded-3 shadow-sm border-primary">
           <div class="card-header">
-            <img src="{{ product.image.url }}">
+            <p><img src="{{ product.image.url }}" alt="Фотка не добавлена"></p>
           </div>
           <div class="card-body">
             <ul class="list-unstyled mt-3 mb-4">
@@ -13,6 +13,8 @@
               <li>Описание: {{ product.description | truncatechars:100 }}</li>
             </ul>
             <a class="btn btn-primary" href="{% url 'catalog:product_detail' product.pk %}" role="button">Посмотреть</a>
+            <a class="btn btn-primary" href="{% url 'catalog:update_product' product.pk %}" role="button">Редактировать</a>
+            <a class="btn btn-primary" href="{% url 'catalog:delete_product' product.pk %}" role="button">Удалить</a>
           </div>
         </div>
       </div>
