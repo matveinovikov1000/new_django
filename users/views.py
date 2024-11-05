@@ -1,4 +1,6 @@
 import secrets
+
+from django.contrib.auth import logout
 from django.views.generic import CreateView
 from django.urls import reverse_lazy, reverse
 from django.core.mail import send_mail
@@ -35,3 +37,9 @@ def email_verification(request, token):
     user.is_active = True
     user.save()
     return redirect(reverse("users:login"))
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('users:login')
+

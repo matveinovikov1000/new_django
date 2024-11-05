@@ -142,7 +142,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 AUTH_USER_MODEL = 'users.User'
 
 LOGIN_REDIRECT_URL = 'catalog:home'
-LOGOUT_REDIRECT_URL = 'users:logout'
+LOGOUT_REDIRECT_URL = 'users:login'
 LOGIN_URL = 'users:login'
 
 EMAIL_HOST = 'smtp.yandex.ru'
