@@ -52,3 +52,9 @@ class ProductForm(StyleFormMixin, forms.ModelForm):
         if price < 0:
             raise ValidationError("Стоимость товара не может быть отрицательной")
         return price
+
+
+class ProductModeratorForm(StyleFormMixin, forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = ["is_published"]

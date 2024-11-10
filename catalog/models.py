@@ -1,4 +1,5 @@
 from django.db import models
+from users.models import User
 
 
 class Product(models.Model):
@@ -38,11 +39,23 @@ class Product(models.Model):
         verbose_name="Признак публикации",
         help_text="Опубликовать",
     )
+    owner = models.ForeignKey(
+        User,
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True,
+        verbose_name="Пользователь",
+        help_text="Укажите пользователя",
+        related_name="products",
+    )
 
     class Meta:
         verbose_name = "Продукт"
         verbose_name_plural = "Продукты"
         ordering = ["category", "name", "price", "created_at"]
+        permissions = [
+            ("can_unpublish_product", "Can unpublish product"),
+        ]
 
     def __str__(self):
         return self.name
