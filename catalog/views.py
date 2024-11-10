@@ -3,12 +3,31 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, TemplateView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from catalog.models import Product
+
+from catalog.models import Product, Category
 from catalog.forms import ProductForm, ProductModeratorForm
+from catalog.services import get_product_from_cache, get_products_in_category
 
 
 class HomeListView(ListView):
     model = Product
+
+    def get_queryset(self):
+        return get_product_from_cache()
+
+
+class ProductsInCategoriesList(ListView):
+    model = Product
+    template_name = "catalog/product_by_category.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["category_id"] = Category.id
+        return context
+
+    def get_queryset(self):
+        category_id = self.kwargs.get('category_id')
+        return get_products_in_category(category_id=category_id)
 
 
 class ProductDetailView(LoginRequiredMixin, DetailView):
